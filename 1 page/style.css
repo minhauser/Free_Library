@@ -1,0 +1,145 @@
+/* Общий стиль страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Минималистичная кнопка смены темы */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 2px solid #333;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Темная тема для кнопки */
+body.dark-theme .theme-toggle {
+    border-color: #e0e0e0;
+}
+
+/* Контейнер с книгами */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Карточка книги */
+.book-card {
+    background: white;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Темная тема для карточек */
+body.dark-theme .book-card {
+    background: #1e1e1e;
+}
+
+/* Обложка книги */
+.book-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Название книги */
+.book-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Описание книги */
+.book-card p {
+    font-size: 14px;
+    color: #666;
+    min-height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+.download-btn,
+.zip-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Кнопка скачивания PDF */
+.download-btn {
+    background-color: #ff5c5c;
+    color: white;
+}
+
+.download-btn:hover {
+    background-color: #e63946;
+}
+
+/* Кнопка скачивания ZIP */
+.zip-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.zip-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Подпись внизу */
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Темная тема для подвала */
+body.dark-theme footer {
+    color: #bbb;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

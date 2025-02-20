@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека книг</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем стили -->
+</head>
+
+<body>
+
+    <!-- Кнопка смены темы -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+    </button>
+
+    <h1>📚 2000 Essential Korean Words</h1>
+
+    <div class="book-container">
+        <div class="book-card">
+            <img src="book1.jpg" alt="Книга 1">
+            <h3>2000 Essential Korean Words for Beginners</h3>
+            <p>A vocabulary contains 2,000 commonly used words
+                categorized by topic, with example sentences, pronunciation guides, and English translations. The book
+                helps learners build a strong foundation in Korean by introducing essential vocabulary in an
+                easy-to-understand format.</p>
+            <button class="download-btn" target="_blank" onclick="downloadPDF('book1.pdf')">📥 Download PDF</button>
+            <button class="zip-btn" onclick="downloadZIP()">📦 Download ZIP</button>
+        </div>
+
+        <div class="book-card">
+            <img src="book2.jpg" alt="Книга 2">
+            <h3>2000 Essential Korean Words for Intermediate</h3>
+            <p>A vocabulary book for intermediate Korean learners. It includes 2,000 commonly used words, categorized by
+                topic, with example sentences, pronunciation guides, and English translations. The book helps expand
+                vocabulary and improve fluency in Korean.</p>
+            <button class="download-btn" onclick="downloadPDF('book2.pdf')">📥 Download PDF</button>
+            <button class="zip-btn" onclick="downloadZIP()">📦 Download ZIP</button>
+        </div>
+
+        <div class="book-card">
+            <img src="book3.jpg" alt="Книга 3">
+            <h3>2000 Essential Korean Words for Advanced</h3>
+            <p>A vocabulary book for advanced Korean learners. It includes 2,000 high-level words, categorized by topic,
+                with example sentences, pronunciation guides, and English translations to enhance fluency.</p>
+            <button class="download-btn" onclick="downloadPDF('book3.pdf')">📥 Download PDF</button>
+            <button class="zip-btn" onclick="downloadZIP()">📦 Download ZIP</button>
+        </div>
+    </div>
+
+    <!-- Подпись -->
+    <footer>
+        Designed by <a href="https://t.me/Sunnatulla_Mamur" target="_blank">Sunnatulla Mamur</a>
+    </footer>
+
+    <script>
+        function downloadPDF(fileName) {
+            const link = document.createElement("a");
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function downloadZIP() {
+            const zipFileName = "books.zip";
+            const link = document.createElement("a");
+            link.href = zipFileName;
+            link.download = zipFileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const themeIcon = document.getElementById("theme-icon");
+            if (document.body.classList.contains("dark-theme")) {
+                themeIcon.textContent = "🌞"; // Значок солнца для тёмной темы
+            } else {
+                themeIcon.textContent = "🌙"; // Значок луны для светлой темы
+            }
+        }
+    </script>
+
+</body>
+
+</html>
